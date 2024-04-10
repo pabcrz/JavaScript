@@ -21,7 +21,8 @@ const totalCharacter = (stringPhrase) => console.log(stringPhrase.length)
 3. A la variable newString, con la propiedad length del objeto string, se puede obetenr el total de caracteres que hay en el nuevo string (sin espacios).
 4. Retornar un console.log con el parametro newString.length*/
 
-const totalLetters = (stringPhrase) => console.log(stringPhrase.replaceAll(' ', '').length)
+const totalLetters = (stringPhrase) =>
+  console.log(stringPhrase.replaceAll(' ', '').length)
 
 /* 3.- Saber cuántas palabras tiene la frase
 1. El string contiene una frase, y las palabras estan separadas por espacios.
@@ -32,12 +33,14 @@ const totalLetters = (stringPhrase) => console.log(stringPhrase.replaceAll(' ', 
 
 const totalWords = (stringPhrase) => console.log(stringPhrase.split(' ').length)
 
-//     4.- Obtener la misma frase pero en mayúsculas
+//4.- Obtener la misma frase pero en mayúsculas
 
-const phraseToUpperCase = (stringPhrase) => console.log(stringPhrase.toLocaleUpperCase())
+const phraseToUpperCase = (stringPhrase) =>
+  console.log(stringPhrase.toLocaleUpperCase())
 
-//     5.- Obtener la misma frase pero con todas las letras "a" reemplazadas por un "4"
-const replaceAto4 = (stringPhrase) => console.log(stringPhrase.replaceAll(/[aAáÁ]/g, '4'))
+//5.- Obtener la misma frase pero con todas las letras "a" reemplazadas por un "4"
+const replaceAto4 = (stringPhrase) =>
+  console.log(stringPhrase.replaceAll(/[aAáÁ]/g, '4'))
 
 totalCharacter(phrase)
 totalLetters(phrase)
