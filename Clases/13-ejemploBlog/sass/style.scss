@@ -1,0 +1,20 @@
+.blog-card{
+  img{
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.autor-item{
+  display: flex;
+  align-items: center;
+  img{
+    border-radius: 50px;
+    max-width: 40px;
+    max-height: 40px;
+  }
+  a{
+    margin-left: 10px;
+  }
+}

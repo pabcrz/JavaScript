@@ -58,3 +58,29 @@ const canes = [
     5.- Necesitamos una nueva lista con todos los objetos de los canes, pero cambiando el valor de la propiedad "vacunado" a "si || no" ( si el valor viene en true, cambiarlo a "Si", si el valor viene en false, cambiarlo a "No")
     6.- Necesitamos una nueva lista con únicamente el nombre de cada can
 */
+
+// const getDogYears = (dogs) => {
+//   dogs.map((dog) => {...dog, edad: dog.edad * 7})
+// }
+
+// console.log(getDogYears(canes))
+
+const getVaccinated = (dogs) => {
+  let total = 0
+  dogs.forEach(dog => {
+    if (dog.vacunado === true)
+    total++
+  })
+  return total 
+}
+console.log(getVaccinated(canes))
+
+const getDogAddress = (dogs) => {
+  const result = dogs.map((dog) => {
+    const address = `${dog.nombre}: ${dog.direccion.calle} #${dog.calle.numero}, ${dog.calle.colonia}. ${dog.calle.codigoPostal}`
+    return address
+  })
+  return result
+}
+
+console.log(getDogAddress(canes))
