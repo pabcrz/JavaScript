@@ -89,7 +89,8 @@ console.log(blogEntries)
 */
 
 const createBlogCard = (entryObject) => {
-  let { image, title, abstract, autor, avatar, fechaCreacion, rating } = entryObject
+  let { image, title, abstract, autor, avatar, fechaCreacion, rating } =
+    entryObject
 
   let card = document.createElement('div')
   card.classList.add('card', 'blog-card', 'mb-3')
@@ -113,7 +114,13 @@ const createBlogCard = (entryObject) => {
   //
   let autorItem = document.createElement('div')
   autorItem.classList.add('list-group-item')
-  autorItem.classList.add('autor-item', 'border', 'rounded', 'p-3', 'border-dark')
+  autorItem.classList.add(
+    'autor-item',
+    'border',
+    'rounded',
+    'p-3',
+    'border-dark'
+  )
 
   let autorImg = document.createElement('img')
   autorImg.setAttribute('src', avatar)
@@ -178,9 +185,12 @@ printPopularEntries(
 )
 
 /*  */
+
+const separateClassNames = autorObject
+
 const createAutorItem = (entryObject) => {
   let { autor, avatar } = entryObject
-  
+
   let autorItem = document.createElement('li')
   autorItem.classList.add('list-group-item', 'autor-item', 'p-2')
 
@@ -210,13 +220,16 @@ const printAutors = (autorsArray, wrapperId) => {
   })
 }
 
-const autorsFilter = Object.values(blogEntries.reduce((accum, current) => {
-  if (!accum[current.autor]) {
-    accum[current.autor] = {...current}
-  }
-  return accum
-}, []))
+const autorsFilter = (dataArray) => {
+  let result = dataArray.reduce((accum, current) => {
+    let { autor, avatar } = current
+    let autorObject = { autor, avatar }
+    return accum.find((item) => item.autor === autorObject.autor)
+      ? accum
+      : [...accum, autorObject]
+      console.log(accum)
+  }, [])
+  return result
+}
 
-printAutors(autorsFilter,
-  'autors'
-)
+printAutors(autorsFilter, 'autors')
