@@ -14,32 +14,52 @@
 
   <body>
     <div class="container">
-      <div class="d-flex flex-row justify-content-center gap-3">
+      <div class="d-flex flex-row justify-content-center gap-3 p-3">
         <div class="col-4">
           <form
-            id="person-form"
+            id="products-form"
             action=""
             class="bg-dark text-white border rounded shadow p-3"
           >
             <div class="form-group">
-              <label for="">Nombre del producto</label>
-              <input type="text" class="form-control" name="product" />
+              <label for="product">Nombre del producto</label>
+              <input
+                type="text"
+                class="form-control"
+                name="product"
+                id="product"
+              />
             </div>
             <div class="form-group">
-              <label for="">Descripción del producto</label>
-              <input type="text" class="form-control" name="description" />
+              <label for="description">Descripción del producto</label>
+              <input
+                type="text"
+                class="form-control"
+                name="description"
+                id="description"
+              />
             </div>
             <div class="form-group">
-              <label for="">Precio del producto</label>
-              <input type="number" class="form-control" name="price" />
+              <label for="price">Precio del producto</label>
+              <input
+                type="number"
+                class="form-control"
+                name="price"
+                id="price"
+              />
             </div>
             <div class="form-group">
-              <label for="">Categoria del producto</label>
-              <input type="text" class="form-control" name="category" />
+              <label for="category">Categoria del producto</label>
+              <input
+                type="text"
+                class="form-control"
+                name="category"
+                id="category"
+              />
             </div>
             <div class="form-group">
-              <label for="">Imagen del producto</label>
-              <input type="text" class="form-control" name="image" />
+              <label for="image">Imagen del producto</label>
+              <input type="text" class="form-control" name="image" id="image" />
             </div>
             <button class="btn btn-primary" id="button-form">
               Guardar producto
@@ -55,17 +75,29 @@
                   type="search"
                   placeholder="Search"
                   aria-label="Search"
+                  id="search-category"
                 />
-                <button class="btn btn-outline-success" type="submit">
-                  Search
-                </button>
+                <select
+                  name="category"
+                  id="category-select"
+                  class="form-select w-100"
+                  aria-label="form-select"
+                >
+                <!-- <option value="default"></option> -->
+              </select>
               </form>
             </div>
           </nav>
           <div class="container">
-            <div class="d-flex flex-wrap justify-content-center gap-3">
+            <div
+              class="d-flex flex-wrap justify-content-center gap-3"
+              id="product-wrapper"
+            >
               <div class="card col-6" style="width: 18rem">
-                <img src="https://picsum.photos/200/300?random=1" class="rounded-top />
+                <img
+                  src="https://picsum.photos/200/300?random=1"
+                  class="rounded-top"
+                />
                 <div class="card-body">
                   <h5 class="card-title">Card title</h5>
                   <p class="card-text">
@@ -75,7 +107,6 @@
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">An item</li>
                     <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
                   </ul>
                 </div>
               </div>

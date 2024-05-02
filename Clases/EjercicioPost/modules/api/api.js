@@ -4,14 +4,14 @@ const getPost = async () => {
   let response = await fetch(
     'https://postprueba1-5c11d-default-rtdb.firebaseio.com/Posts/.json'
   )
-  let Posts = await response.json()
+  let posts = await response.json()
   console.log(Posts)
 
-  let keys = Object.keys(Posts) //manda a llamar metodo object
+  let keys = Object.keys(posts) //manda a llamar metodo object
   console.log(keys)
 
   let postsArray = keys.map((key) => {
-    return { ...Posts[key], key }
+    return { ...posts[key], key }
   })
   console.log(postsArray)
   return postsArray
@@ -21,8 +21,8 @@ const sendPost = async (postObject) => {
   let sendData = await fetch(
     'https://postprueba1-5c11d-default-rtdb.firebaseio.com/Posts/.json',
     {
-      method: 'POST',
-      body: JSON.stringify(postObject)
+      method: 'POST', //metodo a usar
+      body: JSON.stringify(postObject) // lo que se va a enviar
     }
   )
   let data = await sendData.json() //desempaquetar info enviada
